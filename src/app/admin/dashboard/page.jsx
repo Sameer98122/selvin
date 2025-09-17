@@ -1,99 +1,152 @@
-// src/app/dashboard/page.js
-import React from 'react';
-import { FaShoppingCart, FaChartLine, FaUsers, FaTruck, FaBell, FaPlus } from 'react-icons/fa';
-
+'use client';
+import Navbar from '@/components/Sidebar';
+import {
+  ShoppingCart,
+  DollarSign,
+  Users,
+  Package,
+  TrendingUp,
+  Plus,
+  Bell,
+  User,
+  BarChart3
+} from 'lucide-react';
 
 export default function Dashboard() {
+  const stats = [
+    {
+      title: 'Total Orders',
+      value: '12,480',
+      change: '+4.2% vs last month',
+      icon: ShoppingCart,
+      color: 'text-blue-600'
+    },
+    {
+      title: 'Revenue',
+      value: '$842,910',
+      change: '+6.1% vs last month',
+      icon: DollarSign,
+      color: 'text-green-600'
+    },
+    {
+      title: 'Customers',
+      value: '58,233',
+      change: '+1,204 new this month',
+      icon: Users,
+      color: 'text-purple-600'
+    },
+    {
+      title: 'Pending Shipments',
+      value: '312',
+      change: '23 delayed',
+      icon: Package,
+      color: 'text-orange-600'
+    }
+  ];
+
   return (
-    <div className="bg-gray-100 min-h-screen p-8">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-medium text-gray-800">Admin Dashboard</h1>
-        <div className="flex items-center space-x-4">
-          <FaBell className="text-xl text-gray-600" />
-          <div className="w-8 h-8 rounded-full bg-gray-300">
-            {/* User avatar placeholder */}
-          </div>
-        </div>
-      </header>
-
-      {/* Overview Section */}
-      <section className="bg-white p-6 rounded-lg shadow-sm mb-6">
-        <h2 className="text-xl font-medium text-gray-800 mb-4">Overview</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {/* Total Orders Card */}
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <div className="flex justify-between items-center mb-2">
-              <p className="text-sm text-gray-500">Total Orders</p>
-              <FaShoppingCart className="text-xl text-gray-400" />
-            </div>
-            <h3 className="text-3xl font-semibold text-gray-800">12,480</h3>
-            <p className="text-sm text-green-600">+4.2% vs last month</p>
+      {/* <header className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+            <p className="text-sm text-gray-600 mt-1">Overview</p>
           </div>
 
-          {/* Revenue Card */}
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <div className="flex justify-between items-center mb-2">
-              <p className="text-sm text-gray-500">Revenue</p>
-              <FaChartLine className="text-xl text-gray-400" />
-            </div>
-            <h3 className="text-3xl font-semibold text-gray-800">$842,910</h3>
-            <p className="text-sm text-green-600">+6.1% vs last month</p>
-          </div>
-
-          {/* Customers Card */}
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <div className="flex justify-between items-center mb-2">
-              <p className="text-sm text-gray-500">Customers</p>
-              <FaUsers className="text-xl text-gray-400" />
-            </div>
-            <h3 className="text-3xl font-semibold text-gray-800">58,233</h3>
-            <p className="text-sm text-green-600">+1,204 new this month</p>
-          </div>
-
-          {/* Pending Shipments Card */}
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <div className="flex justify-between items-center mb-2">
-              <p className="text-sm text-gray-500">Pending Shipments</p>
-              <FaTruck className="text-xl text-gray-400" />
-            </div>
-            <h3 className="text-3xl font-semibold text-gray-800">312</h3>
-            <p className="text-sm text-red-600">23 delayed</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Orders Section */}
-      <section className="bg-white p-6 rounded-lg shadow-sm mb-6">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-medium text-gray-800">Recent Orders</h2>
-          <div className="flex space-x-2">
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:bg-indigo-700">
-              <FaPlus />
-              <span>New Product</span>
+          <div className="flex items-center space-x-4">
+            <button className="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+              <Bell className="w-6 h-6" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
-            <button className="bg-white text-gray-700 px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 hover:bg-gray-50">
-              View All Orders
-            </button>
+            <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+              <User className="w-5 h-5 text-white" />
+            </div>
           </div>
         </div>
-        <div className="bg-gray-50 p-12 text-center text-gray-500 border-dashed border-2 border-gray-300 rounded-lg">
-          Orders table placeholder
-        </div>
-      </section>
+      </header> */}
 
-      {/* Top Products Section */}
-      <section className="bg-white p-6 rounded-lg shadow-sm">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-medium text-gray-800">Top Products</h2>
-          <button className="bg-white text-gray-700 px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 hover:bg-gray-50">
-            Manage Products
-          </button>
+      {/* Main Content */}
+      <main className="p-4 sm:p-6 lg:p-8">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200"
+              >
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <h3 className="text-xs sm:text-sm font-medium text-gray-600">{stat.title}</h3>
+                  <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${stat.color}`} />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-lg sm:text-2xl font-bold text-gray-900">{stat.value}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">{stat.change}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="bg-gray-50 p-12 text-center text-gray-500 border-dashed border-2 border-gray-300 rounded-lg">
-          Products list placeholder
+
+        {/* Content Sections */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
+          {/* Recent Orders Section */}
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="p-4 sm:p-6 border-b border-gray-200">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                <h3 className="text-lg font-semibold text-gray-900">Recent Orders</h3>
+                <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                  <button className="flex items-center justify-center space-x-2 px-3 py-2 text-sm text-blue-600 hover:bg-blue-50 rounded-lg border border-blue-200 transition-colors">
+                    <Plus className="w-4 h-4" />
+                    <span>New Product</span>
+                  </button>
+                  <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 hover:bg-gray-50 rounded-lg transition-colors">
+                    View All Orders
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 sm:p-6">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 sm:p-8 text-center">
+                <Package className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+                <p className="text-gray-500 text-sm sm:text-base">Orders table placeholder</p>
+                <p className="text-xs text-gray-400 mt-1">Recent orders will appear here</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Top Products Section */}
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="p-4 sm:p-6 border-b border-gray-200">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                <h3 className="text-lg font-semibold text-gray-900">Top Products</h3>
+                <button className="text-sm text-blue-600 hover:text-blue-700 px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors self-start sm:self-auto">
+                  Manage Products
+                </button>
+              </div>
+            </div>
+            <div className="p-4 sm:p-6">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 sm:p-8 text-center">
+                <BarChart3 className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+                <p className="text-gray-500 text-sm sm:text-base">Products list placeholder</p>
+                <p className="text-xs text-gray-400 mt-1">Top selling products will appear here</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+
+        {/* Analytics Overview */}
+        <div className="mt-6 sm:mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Analytics Overview</h3>
+          <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 sm:p-8 text-center">
+            <TrendingUp className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+            <p className="text-gray-500 text-sm sm:text-base">Charts and analytics will appear here</p>
+            <p className="text-xs text-gray-400 mt-1">Sales trends, customer behavior, and performance metrics</p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
