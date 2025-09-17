@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+import ProductsManagment from '@/components/ProductsManagment'
+import React from 'react'
+
+const Productpage = () => {
+  return (
+    <div>
+        <ProductsManagment/>
+    </div>
+  )
+}
+
+export default Productpage
+=======
 'use client';
 import React, { useState } from 'react'
 
@@ -139,3 +153,4 @@ const ProductsManagment = () => {
 }
 
 export default ProductsManagment
+>>>>>>> e982dcb0e722a8084ed8223c10abdbc52e432ed8
