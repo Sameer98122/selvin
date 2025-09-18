@@ -1,6 +1,6 @@
 // pages/settings.jsx
 import Head from 'next/head';
-import Sidebar from '@/components/Sidebar';
+
 import ProfileSection from '@/components/ProfileSection';
 import PaymentSection from '@/components/PaymentSection';
 import IntegrationsSection from '@/components/IntegrationsSection';
@@ -13,7 +13,7 @@ export default function SettingsPage() {
         <title>Workspace Settings</title>
       </Head>
       <div className="flex bg-gray-100 min-h-screen">
-        <Sidebar />
+        
         <main className="flex-1 p-8">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-bold text-gray-800">Workspace Settings</h1>
