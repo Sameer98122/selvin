@@ -1,7 +1,6 @@
-"use client";
+ "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { 
   ShoppingCart, 
   Package, 
@@ -28,8 +27,8 @@ export default function Sidebar({ isOpen, onToggle }) {
   return (
     <>
       {/* Mobile Top Navbar */}
-      <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+      <div className="md:hidden bg-white border-b border-gray-200 px-4 py-3 flex justify-between items-center sticky top-0 z-40">
+        <div className="flex items-center space-x-3">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <ShoppingCart className="w-5 h-5 text-white" />
           </div>
@@ -43,10 +42,10 @@ export default function Sidebar({ isOpen, onToggle }) {
         </button>
       </div>
 
-      {/* Desktop Fixed Sidebar */}
-      <div className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
+      {/* Desktop Sidebar */}
+      <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
         <div className="flex flex-col flex-1 min-h-0 bg-white border-r border-gray-200">
-          {/* Desktop Sidebar Header */}
+          {/* Header */}
           <div className="flex items-center flex-shrink-0 px-4 py-4 border-b border-gray-200">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -56,7 +55,7 @@ export default function Sidebar({ isOpen, onToggle }) {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Navigation */}
           <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -65,14 +64,14 @@ export default function Sidebar({ isOpen, onToggle }) {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                    isActive 
-                      ? 'bg-blue-50 text-blue-700 border border-blue-200' 
+                  className={`flex flex-col md:flex-row items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-blue-50 text-blue-700 border border-blue-200'
                       : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                   }`}
                 >
-                  <Icon className="w-5 h-5 mr-3" />
-                  <span>{item.name}</span>
+                  <Icon className="w-5 h-5 mb-1 md:mb-0 md:mr-3 shrink-0" />
+                  <span className="truncate">{item.name}</span>
                 </Link>
               );
             })}
@@ -82,16 +81,16 @@ export default function Sidebar({ isOpen, onToggle }) {
 
       {/* Mobile Sidebar Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
-          {/* Background Overlay */}
+        <div className="md:hidden fixed inset-0 z-50 flex">
+          {/* Overlay */}
           <div 
             className="fixed inset-0 bg-gray-600 bg-opacity-75"
             onClick={onToggle}
           />
           
-          {/* Mobile Sidebar */}
-          <div className="fixed top-0 left-0 flex flex-col w-64 h-full bg-white transform transition-transform duration-300">
-            {/* Mobile Sidebar Header */}
+          {/* Sidebar */}
+          <div className="relative flex flex-col w-64 h-full bg-white transform transition-transform duration-300 ease-in-out translate-x-0">
+            {/* Header */}
             <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -107,7 +106,7 @@ export default function Sidebar({ isOpen, onToggle }) {
               </button>
             </div>
 
-            {/* Mobile Navigation */}
+            {/* Navigation */}
             <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -117,14 +116,14 @@ export default function Sidebar({ isOpen, onToggle }) {
                     key={item.name}
                     href={item.path}
                     onClick={onToggle}
-                    className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                      isActive 
-                        ? 'bg-blue-50 text-blue-700 border border-blue-200' 
+                    className={`flex flex-col md:flex-row items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                      isActive
+                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`}
                   >
-                    <Icon className="w-5 h-5 mr-3" />
-                    <span>{item.name}</span>
+                    <Icon className="w-5 h-5 mb-1 md:mb-0 md:mr-3 shrink-0" />
+                    <span className="truncate">{item.name}</span>
                   </Link>
                 );
               })}

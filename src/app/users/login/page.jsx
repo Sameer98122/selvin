@@ -9,8 +9,8 @@ const Loginpage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-      <form className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4 sm:p-6">
+      <form className="bg-white rounded-xl shadow-lg p-6 sm:p-8 w-full max-w-md">
         <h3 className="text-center font-semibold text-lg">ShopMate Admin</h3>
         <h2 className="text-center font-bold text-2xl mt-2">Admin Login</h2>
         <p className="text-center text-gray-400 mt-2 mb-6">Secure access to your admin dashboard.</p>
@@ -52,7 +52,6 @@ const Loginpage = () => {
           type="submit"
           className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2 hover:bg-blue-700 transition"
         >
-          
           Login as Admin
         </button>
 

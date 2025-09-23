@@ -25,17 +25,40 @@ const integrations = [
 
 export default function IntegrationsSection() {
   return (
-    <section id="integrations" className="bg-white p-6 rounded-lg shadow-sm">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Integrations</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <section
+      id="integrations"
+      className="bg-white p-6 rounded-2xl shadow-md"
+    >
+      {/* Section Title */}
+      <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6">
+        Integrations
+      </h2>
+
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {integrations.map((integration) => (
-          <div key={integration.name} className="p-4 border rounded-lg bg-gray-50">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-lg font-medium">{integration.name}</span>
-              <span className="text-green-600 text-sm">{integration.status}</span>
+          <div
+            key={integration.name}
+            className="p-5 border rounded-xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-200"
+          >
+            {/* Header */}
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-lg font-medium flex items-center gap-2">
+                <span className="text-2xl">{integration.icon}</span>
+                {integration.name}
+              </span>
+              <span className="text-green-600 text-sm font-medium">
+                {integration.status}
+              </span>
             </div>
-            <p className="text-gray-500 text-sm mb-4">{integration.description}</p>
-            <button className="flex items-center space-x-2 px-3 py-2 border rounded-lg text-gray-700 bg-white hover:bg-gray-100">
+
+            {/* Description */}
+            <p className="text-gray-500 text-sm mb-5">
+              {integration.description}
+            </p>
+
+            {/* Button */}
+            <button className="flex items-center justify-center gap-2 w-full px-4 py-2 border rounded-lg text-gray-700 bg-white hover:bg-gray-100 transition">
               <span>{integration.icon}</span>
               <span>{integration.action}</span>
             </button>
