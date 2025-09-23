@@ -1,5 +1,9 @@
 'use client';
 import React, { useState } from 'react';
+<<<<<<< HEAD
+=======
+import Link from 'next/link';
+>>>>>>> 73a9b2456f616ed815669f20d6d018815334d5a6
 
 const initialProducts = [
   { id: 1, name: 'Wireless Headphones', price: 129.0, stock: 245, active: true },
@@ -8,7 +12,11 @@ const initialProducts = [
   { id: 4, name: 'Bluetooth Speaker Mini', price: 59.0, stock: 512, active: true },
 ];
 
+<<<<<<< HEAD
 export default function ProductsManagment() {
+=======
+const ProductsManagment = () => {
+>>>>>>> 73a9b2456f616ed815669f20d6d018815334d5a6
   const [products, setProducts] = useState(initialProducts);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('all'); // all, active, inactive
@@ -38,12 +46,23 @@ export default function ProductsManagment() {
     );
 
   return (
+<<<<<<< HEAD
     <section className="bg-white p-6 rounded-lg shadow-sm">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <h2 className="text-xl font-semibold text-gray-800">Products Management</h2>
         <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
           + Add Product
         </button>
+=======
+    <div className="p-6 bg-white rounded-lg shadow-md">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-xl font-semibold">Products Management</h1>
+        <Link href="/admin/products/add">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            + Add Product
+          </button>
+        </Link>
+>>>>>>> 73a9b2456f616ed815669f20d6d018815334d5a6
       </div>
 
       {/* Search & Filters */}
@@ -123,6 +142,7 @@ export default function ProductsManagment() {
                   >
                     Delete
                   </button>
+<<<<<<< HEAD
                 </div>
               </div>
             </div>
@@ -132,3 +152,16 @@ export default function ProductsManagment() {
     </section>
   );
 }
+=======
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default ProductsManagment;
+>>>>>>> 73a9b2456f616ed815669f20d6d018815334d5a6
